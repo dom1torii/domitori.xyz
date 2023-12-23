@@ -1,0 +1,135 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+a {
+    color: #037ffc !important;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 64px;
+}
+
+p {
+    font-size: 32px;
+    line-height: 48px;
+    color: #b3b3b3;
+}
+
+html {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.servers {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serverList {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    outline: 1px solid white;
+    height: 85%;
+    width: 75%;
+}
+
+.serverList ul {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.serverList li {
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+    background-color: rebeccapurple;
+    width: 100%;
+    height: 55px;
+    border: 1px solid white;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serverList li div {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.serverCountry {
+    width: 5%;
+}
+
+.serverCountry img {
+    width: 80%;
+    height: auto;
+}
+
+.serverName {
+    width: 35%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.serverMap {
+    width: 20%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.serverIp {
+    width: 35%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.serverPlayers {
+    width: 5%;
+}
+
+
+
+
+
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.footer p {
+    font-size: 16px;
+}

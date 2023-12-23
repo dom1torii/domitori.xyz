@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+
+    <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+
+    <title>domitori</title>
+
+    <script>
+        $(document).ready(function () {
+            $(".window").draggable({handle: '.title-bar'});
+        });
+    </script>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img src="notepad-icon-16.png"><p>about me - Notepad</p>
+          </div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" onclick="$(this).parents().eq(2).hide()"></button>
+            <button aria-label="Maximize" onclick="$(this).parents().eq(2).toggleClass('window100');$(this).parents().eq(2).find('.window-body').toggleClass('window100');if ($(this).parents().eq(2).find('.field-row-stacked') && $(this).parents().eq(2).find('.field-row-stacked').length ) {$(this).parents().eq(2).find('.field-row-stacked').children().toggleClass('text100'); $(this).parents().eq(2).find('.field-row-stacked').toggleClass('text100')}"></button>
+            <button aria-label="Close"onclick="$(this).parents().eq(2).hide()"></button>
+          </div>
+        </div>
+        <div class="window-body">
+            <div class="options">
+                <p><span style="text-decoration: underline;">F</span>ile</p>
+                <p><span style="text-decoration: underline;">E</span>dit</p>
+                <p><span style="text-decoration: underline;">S</span>earch</p>
+                <p><span style="text-decoration: underline;">H</span>elp</p>
+            </div>
+            <div class="field-row-stacked">
+                <div class="text-area" contenteditable="true">
+                    <p>domitori's home</p>
+                    <br>
+                    <a contenteditable="false" target="_blank" href="https://github.com/dom1torii">my github</a> <br>
+                    <a contenteditable="false" target="_blank" href="https://steamcommunity.com/id/dom1tori/">my steam</a> <br>
+                    <a contenteditable="false" target="_blank" href="https://twitter.com/dom1torii">my twitter</a> <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p>if you wanna contact me, do it on discord (.domitori) or dom1torii@proton.me.</p>
+                    <p>on twitter i will probably answer too.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>stuff used:</p>
+                    <a contenteditable="false" target="_blank" href="https://github.com/jdan/98.css">98.css</a><br>
+                    <a contenteditable="false" target="_blank" href="https://github.com/kika/fixedsys">fixedsys font</a><br>
+                    <a contenteditable="false" target="_blank" href="https://win98icons.alexmeub.com/">windows 98 icons</a>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p>no matter where you go, everyone's connected.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

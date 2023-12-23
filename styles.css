@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #018081;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    width: fit-content !important;
+}
+
+.title-bar-text p {
+    margin: 0;
+    padding: 0;
+}
+
+.title-bar-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.window-body {
+    margin: 0 !important;
+    width: fit-content !important;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.options p {
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.field-row-stacked {
+    width: fit-content !important;
+}
+
+@font-face {
+    font-family: 'Fixedsys Excelsior 3.01';
+    src: url(fonts/FSEX.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --button-face: #dfdfdf;
+    --button-highlight: #ffffff;
+    --button-shadow: #808080;
+    --window-frame: #0a0a0a;
+    --border-field: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+    inset 2px 2px var(--window-frame);
+}
+
+.text-area:focus {
+    outline: none;
+}
+
+.text-area {
+    padding: 3px 4px;
+    border: none;
+    box-shadow: var(--border-field);
+    background-color: var(--button-highlight);
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+.field-row-stacked .text-area {
+    min-height: 200px;
+    min-width: 200px;
+    height: 500px;
+    width: 700px;
+    font-weight: normal;
+    font-size: 16px;
+
+    font-family:'Fixedsys Excelsior 3.01';
+}
+
+.text-area p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.window100 {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.text100 {
+    width: 100% !important;
+    flex-grow: 1 !important;
+}
