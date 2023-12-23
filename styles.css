@@ -29,7 +29,7 @@ body {
 .window-body {
     margin: 0 !important;
     flex-grow: 1;
-    overflow-y: scroll;
+    overflow: scroll;
     display: flex
 }
 
