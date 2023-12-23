@@ -10,7 +10,8 @@ body {
 .window {
     display: flex;
     flex-direction: column;
-    width: fit-content !important;
+    width: 700px;
+    height: 600px;
 }
 
 .title-bar-text p {
@@ -27,7 +28,9 @@ body {
 
 .window-body {
     margin: 0 !important;
-    width: fit-content !important;
+    flex-grow: 1;
+    overflow-y: scroll;
+    display: flex
 }
 
 .options {
@@ -43,7 +46,9 @@ body {
 }
 
 .field-row-stacked {
-    width: fit-content !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
 }
 
 @font-face {
@@ -77,13 +82,10 @@ body {
     -moz-appearance: none;
     appearance: none;
     border-radius: 0;
+    flex-grow: 1 !important;
 }
 
 .field-row-stacked .text-area {
-    min-height: 200px;
-    min-width: 200px;
-    height: 500px;
-    width: 700px;
     font-weight: normal;
     font-size: 16px;
 

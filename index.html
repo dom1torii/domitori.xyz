@@ -6,14 +6,17 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
 
-    <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
 
     <title>domitori</title>
 
     <script>
         $(document).ready(function () {
             $(".window").draggable({handle: '.title-bar'});
+            $('.window').resizable();
+            
         });
     </script>
 </head>
@@ -29,37 +32,44 @@
             <button aria-label="Close"onclick="$(this).parents().eq(2).hide()"></button>
           </div>
         </div>
+        <div class="options">
+            <p><span style="text-decoration: underline;">F</span>ile</p>
+            <p><span style="text-decoration: underline;">E</span>dit</p>
+            <p><span style="text-decoration: underline;">S</span>earch</p>
+            <p><span style="text-decoration: underline;">H</span>elp</p>
+        </div>
         <div class="window-body">
-            <div class="options">
-                <p><span style="text-decoration: underline;">F</span>ile</p>
-                <p><span style="text-decoration: underline;">E</span>dit</p>
-                <p><span style="text-decoration: underline;">S</span>earch</p>
-                <p><span style="text-decoration: underline;">H</span>elp</p>
-            </div>
             <div class="field-row-stacked">
                 <div class="text-area" contenteditable="true">
-                    <p>domitori's home</p>
                     <br>
+                    <p>DOMITORI'S HOME</p>
+                    <br>
+                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                     <a contenteditable="false" target="_blank" href="https://github.com/dom1torii">my github</a> <br>
                     <a contenteditable="false" target="_blank" href="https://steamcommunity.com/id/dom1tori/">my steam</a> <br>
                     <a contenteditable="false" target="_blank" href="https://twitter.com/dom1torii">my twitter</a> <br>
-                    <br>
+                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                     <br>
                     <br>
                     <p>if you wanna contact me, do it on discord (.domitori) or dom1torii@proton.me.</p>
                     <p>on twitter i will probably answer too.</p>
                     <br>
                     <br>
-                    <br>
+                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                     <p>stuff used:</p>
                     <a contenteditable="false" target="_blank" href="https://github.com/jdan/98.css">98.css</a><br>
                     <a contenteditable="false" target="_blank" href="https://github.com/kika/fixedsys">fixedsys font</a><br>
-                    <a contenteditable="false" target="_blank" href="https://win98icons.alexmeub.com/">windows 98 icons</a>
+                    <a contenteditable="false" target="_blank" href="https://win98icons.alexmeub.com/">windows 98 icons</a><br>
+                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+                    <br>
+                    <br>
+                    <a contenteditable="false" target="_blank" href="https://github.com/dom1torii/domitori.xyz">source code</a><br>
                     <br>
                     <br>
                     <br>
-                    <br>
+                    <p>✧ ˚ 　· 　　 .</p>
                     <p>no matter where you go, everyone's connected.</p>
+                    <p>✧ ˚ 　· 　　 .</p>
                 </div>
             </div>
         </div>
