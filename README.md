@@ -1,2 +1,2 @@
 # domitori.xyz
-my website
+https://domitori.xyz/
