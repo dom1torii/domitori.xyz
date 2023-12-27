@@ -13,66 +13,191 @@
     <title>domitori</title>
 
     <script>
-        $(document).ready(function () {
-            $(".window").draggable({handle: '.title-bar'});
-            $('.window').resizable();
-            
+    $(document).ready(function () {
+        $('.window-error').hide();
+        $(".window").draggable({handle: '.title-bar'});
+        $('.notepad-window').resizable();
+
+        $( ".computer-icon" ).on({
+            "touchstart" : function(){
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            },
+            "dblclick" : function() {
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            }
         });
+
+        $( ".documents-icon" ).on({
+            "touchstart" : function(){
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            },
+            "dblclick" : function() {
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            }
+        });
+
+        $( ".internet-icon" ).on({
+            "touchstart" : function(){
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            },
+            "dblclick" : function() {
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            }
+        });
+
+        $( ".network-icon" ).on({
+            "touchstart" : function(){
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            },
+            "dblclick" : function() {
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            }
+        });
+
+        $( ".bin-icon" ).on({
+            "touchstart" : function(){
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            },
+            "dblclick" : function() {
+                $(".window-error").show()
+                $(".window-error").addClass('window-top')
+                $(".notepad-window").removeClass('window-top')
+            }
+        });
+
+        $( ".notepad-icon" ).on({
+            "touchstart" : function(){
+                $(".notepad-window").show()
+                $(".notepad-window").addClass('window-top')
+                $(".window-error").removeClass('window-top')
+            },
+            "dblclick" : function() {
+                $(".notepad-window").show()
+                $(".notepad-window").addClass('window-top')
+                $(".window-error").removeClass('window-top')
+            }
+        });
+    })
     </script>
 </head>
 <body>
-    <div class="window">
-        <div class="title-bar">
-          <div class="title-bar-text">
-            <img src="notepad-icon-16.png"><p>about me - Notepad</p>
-          </div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize" onclick="$(this).parents().eq(2).hide()"></button>
-            <button aria-label="Maximize" onclick="$(this).parents().eq(2).toggleClass('window100');$(this).parents().eq(2).find('.window-body').toggleClass('window100');if ($(this).parents().eq(2).find('.field-row-stacked') && $(this).parents().eq(2).find('.field-row-stacked').length ) {$(this).parents().eq(2).find('.field-row-stacked').children().toggleClass('text100'); $(this).parents().eq(2).find('.field-row-stacked').toggleClass('text100')}"></button>
-            <button aria-label="Close"onclick="$(this).parents().eq(2).hide()"></button>
-          </div>
+    <div class="desktop" id="desktop">
+        <div class="removeSelection" onclick="$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')})"></div>
+        <div class="icons">
+            <div class="icon computer-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
+                <img src="mycomputer-desktop-48.png" alt="My Computer">
+                <p>My Computer</p>
+            </div>
+            <div class="icon documents-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
+                <img src="mydocs-desktop-48.png" alt="My Documents">
+                <p>My Documents</p>
+            </div>
+            <div class="icon internet-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
+                <img src="msie-desktop-48.png" alt="Internet Explorer">
+                <p>Internet Explorer</p>
+            </div>
+            <div class="icon network-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
+                <img src="networks-desktop-48.png" alt="Network Neighborhood">
+                <p>Network Neighborhood</p>
+            </div>
+            <div class="icon bin-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
+                <img src="recyclebin-desktop-48.png" alt="Recycle Bin">
+                <p>Recycle Bin</p>
+            </div>
+            <div class="icon notepad-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
+                <img src="notepad-desktop-48.png" alt="Notepad">
+                <p>about me.txt</p>
+            </div>
         </div>
-        <div class="options">
-            <p><span style="text-decoration: underline;">F</span>ile</p>
-            <p><span style="text-decoration: underline;">E</span>dit</p>
-            <p><span style="text-decoration: underline;">S</span>earch</p>
-            <p><span style="text-decoration: underline;">H</span>elp</p>
-        </div>
-        <div class="window-body">
-            <div class="field-row-stacked">
-                <div class="text-area" contenteditable="true">
-                    <br>
-                    <p>DOMITORI'S HOME</p>
-                    <br>
-                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                    <a contenteditable="false" target="_blank" href="https://github.com/dom1torii">my github</a> <br>
-                    <a contenteditable="false" target="_blank" href="https://steamcommunity.com/id/dom1tori/">my steam</a> <br>
-                    <a contenteditable="false" target="_blank" href="https://twitter.com/dom1torii">my twitter</a> <br>
-                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                    <br>
-                    <br>
-                    <p>if you wanna contact me, do it on discord (.domitori) or dom1torii@proton.me.</p>
-                    <p>on twitter i will probably answer too.</p>
-                    <br>
-                    <br>
-                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                    <p>stuff used:</p>
-                    <a contenteditable="false" target="_blank" href="https://github.com/jdan/98.css">98.css</a><br>
-                    <a contenteditable="false" target="_blank" href="https://github.com/kika/fixedsys">fixedsys font</a><br>
-                    <a contenteditable="false" target="_blank" href="https://win98icons.alexmeub.com/">windows 98 icons</a><br>
-                    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                    <br>
-                    <br>
-                    <a contenteditable="false" target="_blank" href="https://github.com/dom1torii/domitori.xyz">source code</a><br>
-                    <br>
-                    <br>
-                    <br>
-                    <p>✧ ˚ 　· 　　 .</p>
-                    <p>no matter where you go, everyone's connected.</p>
-                    <p>✧ ˚ 　· 　　 .</p>
+        <div class="window notepad-window">
+            <div class="title-bar" onmousedown="$(this).parent().addClass('window-top'); $('.window-error').removeClass('window-top')">
+            <div class="title-bar-text">
+                <img src="notepad-icon-16.png"><p>about me - Notepad</p>
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize" onclick="$(this).parents().eq(2).hide()"></button>
+                <button aria-label="Maximize" onclick="$(this).parents().eq(2).toggleClass('window100');$(this).parents().eq(2).find('.window-body').toggleClass('window100');if ($(this).parents().eq(2).find('.field-row-stacked') && $(this).parents().eq(2).find('.field-row-stacked').length ) {$(this).parents().eq(2).find('.field-row-stacked').children().toggleClass('text100'); $(this).parents().eq(2).find('.field-row-stacked').toggleClass('text100')}"></button>
+                <button aria-label="Close" onclick="$(this).parents().eq(2).hide()"></button>
+            </div>
+            </div>
+            <div class="options">
+                <p><span style="text-decoration: underline;">F</span>ile</p>
+                <p><span style="text-decoration: underline;">E</span>dit</p>
+                <p><span style="text-decoration: underline;">S</span>earch</p>
+                <p><span style="text-decoration: underline;">H</span>elp</p>
+            </div>
+            <div class="window-body">
+                <div class="field-row-stacked">
+                    <div class="text-area" contenteditable="true">
+                        <br>
+                        <p>DOMITORI'S HOME</p>
+                        <br>
+                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+                        <a contenteditable="false" target="_blank" href="https://github.com/dom1torii">my github</a> <br>
+                        <a contenteditable="false" target="_blank" href="https://steamcommunity.com/id/dom1tori/">my steam</a> <br>
+                        <a contenteditable="false" target="_blank" href="https://twitter.com/dom1torii">my twitter</a> <br>
+                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+                        <br>
+                        <br>
+                        <p>if you wanna contact me, do it on discord (.domitori) or dom1torii@proton.me.</p>
+                        <p>on twitter i will probably answer too.</p>
+                        <br>
+                        <br>
+                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+                        <p>stuff used:</p>
+                        <a contenteditable="false" target="_blank" href="https://github.com/jdan/98.css">98.css</a><br>
+                        <a contenteditable="false" target="_blank" href="https://github.com/kika/fixedsys">fixedsys font</a><br>
+                        <a contenteditable="false" target="_blank" href="https://win98icons.alexmeub.com/">windows 98 icons</a><br>
+                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+                        <br>
+                        <br>
+                        <a contenteditable="false" target="_blank" href="https://github.com/dom1torii/domitori.xyz">source code</a><br>
+                        <br>
+                        <br>
+                        <br>
+                        <p>✧ ˚ 　· 　　 .</p>
+                        <p>no matter where you go, everyone's connected.</p>
+                        <p>✧ ˚ 　· 　　 .</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="window window-error">
+            <div class="title-bar" onmousedown="$(this).parent().addClass('window-top'); $('.notepad-window').removeClass('window-top')">
+              <div class="title-bar-text">Error</div>
+              <div class="title-bar-controls">
+                <button aria-label="Close" onclick="$(this).parents().eq(2).hide()"></button>
+              </div>
+            </div>
+            <div class="window-body">
+                <div class="error-main">
+                    <img src="error-32.png" alt="Error">
+                    <div class="error-message">
+                        <span class="error-app">App</span>&nbsp;<p>is not accessible.</p>
+                    </div>
+                </div>
+                <button onclick="$(this).parents().eq(1).hide()">OK</button>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>

@@ -5,18 +5,24 @@
 
 body {
     background-color: #018081;
+    overflow: hidden;
 }
 
-.window {
+.window.notepad-window {
+    position: absolute !important;
+    top: 10%;
+    left: 20%;
     display: flex;
     flex-direction: column;
     width: 700px;
     height: 600px;
+    z-index: 2;
 }
 
 .title-bar-text p {
     margin: 0;
     padding: 0;
+    cursor: default;
 }
 
 .title-bar-text {
@@ -26,17 +32,17 @@ body {
     gap: 5px;
 }
 
-.window-body {
+.notepad-window .window-body {
     margin: 0 !important;
     flex-grow: 1;
     overflow: scroll;
-    display: flex
 }
 
 .options {
     display: flex;
     flex-direction: row;
     gap: 5px;
+    user-select: none;
 }
 
 .options p {
@@ -104,11 +110,114 @@ body {
     top: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    display: flex;
-    flex-direction: column;
+
 }
 
 .text100 {
     width: 100% !important;
     flex-grow: 1 !important;
+}
+
+.removeSelection {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0 !important;
+}
+
+.icons {
+    position: relative;
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1 !important;
+    padding-top: 5px;
+}
+
+.icon {
+    height: fit-content !important;
+    width: 70px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+    gap: 5px;
+
+    user-select: none;
+}
+
+.icon img {
+    height: 42px;
+    width: auto;
+    user-select: none;
+}
+
+.icon p {
+    color: white;
+    font-size: 11px;
+    font-family: "Pixelated MS Sans Serif", Arial;
+}
+
+.iconClickColor {
+    background-color: #000080;
+}
+
+.window-error { 
+    position: absolute !important;
+    display: flex;
+    flex-direction: column;
+    top: 20%;
+    left: 30%;
+    height: 125px;
+    width: 350px;
+    z-index: 2;
+}
+
+.window-error .window-body {
+    margin: 0;
+    padding: 10px;
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.window-body button {
+    margin: 5px !important;
+    width: 60px;
+    margin-top: auto !important;
+}
+
+.error-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.error-message {
+    display: flex;
+}
+
+.window-top {
+    z-index: 5 !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .window-error {
+        top: 30%;
+        left: 2%;
+    }
+
+    .notepad-window {
+        top: 5% !important;
+        left: 5% !important;
+    }
+
 }
