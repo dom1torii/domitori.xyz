@@ -6,6 +6,14 @@
 body {
     background-color: #018081;
     overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.desktop {
+    position: relative;
+    flex-grow: 1;
 }
 
 .window.notepad-window {
@@ -30,6 +38,7 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 5px;
+    user-select: none;
 }
 
 .notepad-window .window-body {
@@ -129,7 +138,7 @@ body {
 
 .icons {
     position: relative;
-    height: 100%;
+    height: fit-content;
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -220,4 +229,95 @@ body {
         left: 5% !important;
     }
 
+}
+
+
+
+
+
+
+.taskbar {
+    height: 30px;
+    width: 100%;
+    background: silver;
+    margin-top: auto;
+    box-shadow: rgb(255, 255, 255) 0px 3px inset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 3px;
+    padding-right: 3px;
+    z-index: 100;
+    justify-content: space-between;
+}
+
+.taskbar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.taskbar-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.taskbar-icons img {
+    user-select: none;
+    height: 19px;
+}
+
+.taskbar-left button {
+    user-select: none;
+    height: 25px;
+    width: 80px;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.taskbar-left button span {
+    user-select: none;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.taskbar-left button img {
+    user-select: none;
+    height: 25px;
+}
+
+.taskbar-separator {
+    width: 4px;
+    height: 20px;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+button.active {
+    margin-right: 6px;
+    height: 25px;
+    width: 100px;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+}
+
+.taskbar-right button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taskbar-right button img {
+    height: 19px;
+    user-select: none;
+}
+
+.time {
+    user-select: none;
+    font-size: 11px;
+    font-weight: lighter;
 }

@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
@@ -20,11 +20,13 @@
 
         $( ".computer-icon" ).on({
             "touchstart" : function(){
+                $(".error-app").html("My Computer")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
             },
             "dblclick" : function() {
+                $(".error-app").html("My Computer")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
@@ -33,11 +35,13 @@
 
         $( ".documents-icon" ).on({
             "touchstart" : function(){
+                $(".error-app").html("My Documents")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
             },
             "dblclick" : function() {
+                $(".error-app").html("My Documents")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
@@ -46,11 +50,13 @@
 
         $( ".internet-icon" ).on({
             "touchstart" : function(){
+                $(".error-app").html("Internet Explorer")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
             },
             "dblclick" : function() {
+                $(".error-app").html("Internet Explorer")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
@@ -59,11 +65,13 @@
 
         $( ".network-icon" ).on({
             "touchstart" : function(){
+                $(".error-app").html("Network Neighborhood")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
             },
             "dblclick" : function() {
+                $(".error-app").html("Network Neighborhood")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
@@ -72,11 +80,13 @@
 
         $( ".bin-icon" ).on({
             "touchstart" : function(){
+                $(".error-app").html("Recycle Bin")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
             },
             "dblclick" : function() {
+                $(".error-app").html("Recycle Bin")
                 $(".window-error").show()
                 $(".window-error").addClass('window-top')
                 $(".notepad-window").removeClass('window-top')
@@ -95,6 +105,16 @@
                 $(".window-error").removeClass('window-top')
             }
         });
+
+
+
+
+        function updateTime() {
+            var now = new Date(Date.now());
+            var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            $(".time").html(formatted)
+        }
+       setInterval(updateTime, 1000)
     })
     </script>
 </head>
@@ -196,6 +216,24 @@
                 </div>
                 <button onclick="$(this).parents().eq(1).hide()">OK</button>
             </div>
+        </div>
+    </div>
+    <div class="taskbar">
+        <div class="taskbar-left">
+            <button><img src="windows-32.png" alt="Start"><span>Start</span></button>
+            <div class="taskbar-separator"></div>
+            <div class="taskbar-icons">
+                <img src="desktop-32.png" alt="Desktop">
+                <img src="msie-32.png" alt="Internet Explorer">
+                <img src="outlook-32.png" alt="Outlook Express">
+            </div>
+            <div class="taskbar-separator"></div>
+        </div>
+        <div class="taskbar-right">
+            <button class="active">
+                <img src="speaker-32.png" alt="Volume">
+                <span class="time"></span>
+            </button>
         </div>
     </div>
 
