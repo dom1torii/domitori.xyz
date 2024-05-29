@@ -1,241 +1,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/98.css" />
-
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>domitori</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>domitori.xyz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-    $(document).ready(function () {
-        $('.window-error').hide();
-        $(".window").draggable({handle: '.title-bar'});
-        $('.notepad-window').resizable();
-
-        $( ".computer-icon" ).on({
-            "touchstart" : function(){
-                $(".error-app").html("My Computer")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            },
-            "dblclick" : function() {
-                $(".error-app").html("My Computer")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            }
-        });
-
-        $( ".documents-icon" ).on({
-            "touchstart" : function(){
-                $(".error-app").html("My Documents")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            },
-            "dblclick" : function() {
-                $(".error-app").html("My Documents")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            }
-        });
-
-        $( ".internet-icon" ).on({
-            "touchstart" : function(){
-                $(".error-app").html("Internet Explorer")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            },
-            "dblclick" : function() {
-                $(".error-app").html("Internet Explorer")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            }
-        });
-
-        $( ".network-icon" ).on({
-            "touchstart" : function(){
-                $(".error-app").html("Network Neighborhood")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            },
-            "dblclick" : function() {
-                $(".error-app").html("Network Neighborhood")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            }
-        });
-
-        $( ".bin-icon" ).on({
-            "touchstart" : function(){
-                $(".error-app").html("Recycle Bin")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            },
-            "dblclick" : function() {
-                $(".error-app").html("Recycle Bin")
-                $(".window-error").show()
-                $(".window-error").addClass('window-top')
-                $(".notepad-window").removeClass('window-top')
-            }
-        });
-
-        $( ".notepad-icon" ).on({
-            "touchstart" : function(){
-                $(".notepad-window").show()
-                $(".notepad-window").addClass('window-top')
-                $(".window-error").removeClass('window-top')
-            },
-            "dblclick" : function() {
-                $(".notepad-window").show()
-                $(".notepad-window").addClass('window-top')
-                $(".window-error").removeClass('window-top')
-            }
-        });
-
-
-
-
-        function updateTime() {
-            var now = new Date(Date.now());
-            var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-            $(".time").html(formatted)
+      tailwind.config = {
+        theme: {
+          extend: {
+          },
+          colors: {
+            'link-hover': '#026afc',
+            'grey-text': '#959595'
+          }
         }
-       setInterval(updateTime, 1000)
-    })
+      }
     </script>
-</head>
-<body>
-    <div class="desktop" id="desktop">
-        <div class="removeSelection" onclick="$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')})"></div>
-        <div class="icons">
-            <div class="icon computer-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
-                <img src="mycomputer-desktop-48.png" alt="My Computer">
-                <p>My Computer</p>
-            </div>
-            <div class="icon documents-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
-                <img src="mydocs-desktop-48.png" alt="My Documents">
-                <p>My Documents</p>
-            </div>
-            <div class="icon internet-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
-                <img src="msie-desktop-48.png" alt="Internet Explorer">
-                <p>Internet Explorer</p>
-            </div>
-            <div class="icon network-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
-                <img src="networks-desktop-48.png" alt="Network Neighborhood">
-                <p>Network Neighborhood</p>
-            </div>
-            <div class="icon bin-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
-                <img src="recyclebin-desktop-48.png" alt="Recycle Bin">
-                <p>Recycle Bin</p>
-            </div>
-            <div class="icon notepad-icon" onclick="if(!$(this).children().eq(1).hasClass('IconClickColor')){$('.icon').each(function(){$(this).children().eq(1).removeClass('IconClickColor')}); $(this).children().eq(1).addClass('IconClickColor')} else{$(this).children().eq(1).toggleClass('IconClickColor')}">
-                <img src="notepad-desktop-48.png" alt="Notepad">
-                <p>about me.txt</p>
-            </div>
-        </div>
-        <div class="window notepad-window">
-            <div class="title-bar" onmousedown="$(this).parent().addClass('window-top'); $('.window-error').removeClass('window-top')">
-            <div class="title-bar-text">
-                <img src="notepad-icon-16.png"><p>about me - Notepad</p>
-            </div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize" onclick="$(this).parents().eq(2).hide()"></button>
-                <button aria-label="Maximize" onclick="$(this).parents().eq(2).toggleClass('window100');$(this).parents().eq(2).find('.window-body').toggleClass('window100');if ($(this).parents().eq(2).find('.field-row-stacked') && $(this).parents().eq(2).find('.field-row-stacked').length ) {$(this).parents().eq(2).find('.field-row-stacked').children().toggleClass('text100'); $(this).parents().eq(2).find('.field-row-stacked').toggleClass('text100')}"></button>
-                <button aria-label="Close" onclick="$(this).parents().eq(2).hide()"></button>
-            </div>
-            </div>
-            <div class="options">
-                <p><span style="text-decoration: underline;">F</span>ile</p>
-                <p><span style="text-decoration: underline;">E</span>dit</p>
-                <p><span style="text-decoration: underline;">S</span>earch</p>
-                <p><span style="text-decoration: underline;">H</span>elp</p>
-            </div>
-            <div class="window-body">
-                <div class="field-row-stacked">
-                    <div class="text-area" contenteditable="true">
-                        <br>
-                        <p>DOMITORI'S HOME</p>
-                        <br>
-                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                        <a contenteditable="false" target="_blank" href="https://github.com/dom1torii">my github</a> <br>
-                        <a contenteditable="false" target="_blank" href="https://steamcommunity.com/id/dom1tori/">my steam</a> <br>
-                        <a contenteditable="false" target="_blank" href="https://twitter.com/dom1torii">my twitter</a> <br>
-                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                        <br>
-                        <br>
-                        <p>if you wanna contact me, do it on discord (.domitori) or dom1torii@proton.me.</p>
-                        <p>on twitter i will probably answer too.</p>
-                        <br>
-                        <br>
-                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                        <p>stuff used:</p>
-                        <a contenteditable="false" target="_blank" href="https://github.com/jdan/98.css">98.css</a><br>
-                        <a contenteditable="false" target="_blank" href="https://github.com/kika/fixedsys">fixedsys font</a><br>
-                        <a contenteditable="false" target="_blank" href="https://win98icons.alexmeub.com/">windows 98 icons</a><br>
-                        <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-                        <br>
-                        <br>
-                        <a contenteditable="false" target="_blank" href="https://github.com/dom1torii/domitori.xyz">source code</a><br>
-                        <br>
-                        <br>
-                        <br>
-                        <p>✧ ˚ 　· 　　 .</p>
-                        <p>no matter where you go, everyone's connected.</p>
-                        <p>✧ ˚ 　· 　　 .</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="window window-error">
-            <div class="title-bar" onmousedown="$(this).parent().addClass('window-top'); $('.notepad-window').removeClass('window-top')">
-              <div class="title-bar-text">Error</div>
-              <div class="title-bar-controls">
-                <button aria-label="Close" onclick="$(this).parents().eq(2).hide()"></button>
-              </div>
-            </div>
-            <div class="window-body">
-                <div class="error-main">
-                    <img src="error-32.png" alt="Error">
-                    <div class="error-message">
-                        <span class="error-app">App</span>&nbsp;<p>is not accessible.</p>
-                    </div>
-                </div>
-                <button onclick="$(this).parents().eq(1).hide()">OK</button>
-            </div>
-        </div>
-    </div>
-    <div class="taskbar">
-        <div class="taskbar-left">
-            <button><img src="windows-32.png" alt="Start"><span>Start</span></button>
-            <div class="taskbar-separator"></div>
-            <div class="taskbar-icons">
-                <img src="desktop-32.png" alt="Desktop">
-                <img src="msie-32.png" alt="Internet Explorer">
-                <img src="outlook-32.png" alt="Outlook Express">
-            </div>
-            <div class="taskbar-separator"></div>
-        </div>
-        <div class="taskbar-right">
-            <button class="active">
-                <img src="speaker-32.png" alt="Volume">
-                <span class="time"></span>
-            </button>
-        </div>
-    </div>
 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+      * {
+        font-family: "JetBrains Mono", monospace;
+        color: white;
+      }
+      @keyframes blink {
+        50% {opacity: 0}
+      }
+    </style>
+</head>
+<body class="bg-[black]">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div class="text-center flex flex-col">
+        <div class="text-xl"><span class="text-grey-text">></span>DOMITORI.XYZ<span class="animate-[blink_1s_step-start_infinite] text-grey-text">_</span></div>
+        <div class="">
+          <a class="hover:underline hover:text-link-hover" href="https://github.com/dom1torii" target="_blank">[github]</a>
+          <a class="hover:underline hover:text-link-hover" href="https://steamcommunity.com/id/dom1tori/" target="_blank">[steam]</a>
+          <a class="hover:underline hover:text-link-hover" href="https://x.com/dom1torii" target="_blank">[twitter]</a>
+          <a class="hover:underline hover:text-link-hover" href="https://t.me/dom1torii" target="_blank">[telegram]</a>
+          <a class="hover:underline hover:text-link-hover" href="https://discordapp.com/users/295541656978063360" target="_blank">[discord]</a>
+        </div>
+        <div class="">
+          <a class="hover:underline hover:text-link-hover" href="" target="_blank">[projects]</a>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
