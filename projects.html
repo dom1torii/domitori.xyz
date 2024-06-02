@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>domitori.xyz > projects</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+          },
+          colors: {
+            'link-hover': '#026afc',
+            'grey-text': '#959595'
+          }
+        }
+      }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+        * {
+            font-family: "JetBrains Mono", monospace;
+            color: white;
+        }
+        @keyframes blink {
+            50% {opacity: 0}
+        }
+    </style>
+</head>
+<body class="bg-[black]">
+    <div class="w-screen h-screen flex flex-col justify-center items-center gap-3">
+        <div class="text-2xl"><span class="text-grey-text">></span>PROJECTS<span class="animate-[blink_1s_step-start_infinite] text-grey-text">_</span></div>
+        <div class="flex flex-col md:flex-row gap-3">
+            <div class="h-[200px] aspect-video relative">
+                <img class="h-full w-auto rounded-md" src="/img/valorantbuilder.webp" alt="Valorant Builder">
+                <a class="opacity-0 hover:opacity-100 transition-[1s] backdrop-blur-sm hover:underline hover:text-link-hover absolute left-0 top-0 w-full h-full leading-[200px] text-center rounded-md" href="https://valorantbuilder.com/" target="_blank">[valorantbuilder.com]</a>
+            </div>
+            <div class="h-[200px] aspect-video relative">
+                <img class="h-full w-auto rounded-md" src="/img/csinventory.webp" alt="CSInventory">
+                <a class="opacity-0 hover:opacity-100 transition-[1s] backdrop-blur-sm hover:underline hover:text-link-hover absolute left-0 top-0 w-full h-full leading-[200px] text-center rounded-md" href="#">[csinventory (wip)]</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
